@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #ffffff;
+    color: #101d35;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+        radial-gradient(circle at 80% 40%, #dce8ff 0%, transparent 30%),
+        #ffffff;
+}
+
+
+.hero-content {
+    width: 60%;
+    position: relative;
+    z-index: 3;
+}
+
+
+.mini-title {
+    color: #e63b4d;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(60px, 9vw, 135px);
+    line-height: .85;
+    color: #10244a;
+    text-transform: uppercase;
+}
+
+
+.hero h1 span {
+    display: block;
+    color: #e63b4d;
+}
+
+
+.hero-text {
+    max-width: 550px;
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #59667b;
+}
+
+
+.boton {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 16px 30px;
+    background: #102f68;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+
+.boton:hover {
+    background: #e63b4d;
+    transform: translateY(-5px);
+}
+
+
+/* BOLA */
+
+.hero-ball {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.basketball {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: #e63b4d;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(16, 47, 104, .25);
+}
+
+
+.basketball::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background: #102f68;
+    top: 48%;
+    transform: rotate(-25deg);
+}
+
+
+.basketball::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 100%;
+    background: #102f68;
+    left: 48%;
+    transform: rotate(25deg);
+}
+
+
+/* INTRO */
+
+.intro {
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 0 25px;
+}
+
+
+.etiqueta {
+    color: #e63b4d;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+
+.intro h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #102f68;
+}
+
+
+.intro p:last-child {
+    color: #687386;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+
+/* RANKING */
+
+#ranking {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+
+.linea-central {
+    position: absolute;
+    width: 5px;
+    background: #102f68;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.linea-central::before,
+.linea-central::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #e63b4d;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.linea-central::before {
+    top: 0;
+}
+
+
+.linea-central::after {
+    bottom: 0;
+}
+
+
+.jugador {
+    width: 50%;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.jugador-derecha {
+    margin-left: 50%;
+    justify-content: flex-start;
+    padding-left: 80px;
+}
+
+
+.jugador-izquierda {
+    justify-content: flex-end;
+    padding-right: 80px;
+}
+
+
+/* CIRCULO */
+
+.circulo {
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: #f28b96;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    border: 12px solid white;
+    box-shadow:
+        0 0 0 4px #f28b96,
+        0 25px 60px rgba(16, 47, 104, .15);
+    transition:
+        width .6s ease,
+        height .6s ease,
+        border-radius .6s ease,
+        background .5s ease,
+        transform .6s ease;
+}
+
+
+.circulo:hover {
+    width: 500px;
+    height: 500px;
+    border-radius: 35px;
+    background: #102f68;
+    color: white;
+    transform: translateY(-10px);
+    z-index: 20;
+}
+
+
+/* CONEXIONES */
+
+.jugador-derecha .circulo::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #102f68;
+    left: -80px;
+}
+
+
+.jugador-izquierda .circulo::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #102f68;
+    right: -80px;
+}
+
+
+/* TEXTO NORMAL */
+
+.contenido-normal {
+    transition: .4s;
+}
+
+
+.numero {
+    font-family: 'Oswald', sans-serif;
+    font-size: 90px;
+    line-height: .8;
+    color: white;
+    display: block;
+    text-shadow: 3px 4px 0 #d54656;
+}
+
+
+.contenido-normal h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    color: #102f68;
+    margin-top: 25px;
+}
+
+
+.contenido-normal p {
+    margin-top: 8px;
+    color: white;
+    font-weight: 700;
+}
+
+
+/* INFORMACION HOVER */
+
+.contenido-hover {
+    position: absolute;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .5s;
+}
+
+
+.circulo:hover .contenido-normal {
+    opacity: 0;
+    transform: scale(.5);
+}
+
+
+.circulo:hover .contenido-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.puesto {
+    color: #f28b96;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+
+.contenido-hover h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+
+.equipo {
+    color: #f28b96;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+.contenido-hover p {
+    color: #dce4f3;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+.contenido-hover strong {
+    display: block;
+    color: white;
+    margin: 20px 0 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+/* FINAL */
+
+.final {
+    text-align: center;
+    padding: 150px 20px;
+    background: #102f68;
+    color: white;
+    margin-top: 100px;
+}
+
+
+.final span {
+    color: #f28b96;
+    letter-spacing: 5px;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+
+.final h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
+    margin: 25px 0;
+}
+
+
+.final p {
+    color: #cbd5e7;
+}
+
+
+.final button {
+    margin-top: 35px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: .3s;
+}
+
+
+.final button:hover {
+    background: white;
+    color: #102f68;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #081a38;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+.footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+
+.footer-logo span {
+    color: #e63b4d;
+}
+
+
+footer p {
+    margin-top: 15px;
+    color: #b9c4d7;
+}
+
+
+footer strong {
+    color: white;
+}
+
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* ANIMACION AL ENTRAR */
+
+.jugador {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: 1s ease;
+}
+
+
+.jugador.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 70px 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-ball {
+        opacity: .15;
+        right: -200px;
+    }
+
+    .intro h2 {
+        font-size: 55px;
+    }
+
+    #ranking {
+        padding: 50px 20px;
+    }
+
+    .linea-central {
+        left: 30px;
+    }
+
+    .jugador,
+    .jugador-derecha,
+    .jugador-izquierda {
+        width: 100%;
+        margin-left: 0;
+        padding: 60px 0 60px 65px;
+        justify-content: flex-start;
+    }
+
+    .jugador-derecha .circulo::before,
+    .jugador-izquierda .circulo::before {
+        width: 35px;
+        left: -35px;
+        right: auto;
+    }
+
+    .circulo {
+        width: 320px;
+        height: 320px;
+    }
+
+    .circulo:hover {
+        width: 340px;
+        height: 450px;
+        border-radius: 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .circulo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circulo:hover {
+        width: 290px;
+        height: 450px;
+    }
+
+    .numero {
+        font-size: 70px;
+    }
+
+    .contenido-normal h3 {
+        font-size: 25px;
+    }
+
+}
